@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script>
+        function test(){
+            window.frames[0].frameElement.contentWindow.myFunction();
+        }
+    </script>
+</head>
+<body>
+
+<button onclick="test()">вызов функции</button>
+
+<iframe id='GuiFrame' src="http://localhost:4173/" name="GuiFrame"></iframe>
+</body>
+</html>

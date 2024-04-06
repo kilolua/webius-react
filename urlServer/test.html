@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    async function sendMsg(){
+        const a = fetch("http://localhost:8080/sendUrl", {
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                url:window.location.href,
+            })
+        })
+        console.log(a);
+    }
+
+    document.addEventListener('DOMContentLoaded', async ()=>{
+        const a = await fetch("http://localhost:8080/sendUrl", {
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                url:window.location.href,
+            })
+        })
+        console.log(a);
+    })
+
+</script>
+<body>
+</body>
+</html>
