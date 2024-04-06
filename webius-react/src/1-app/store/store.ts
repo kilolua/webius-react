@@ -1,5 +1,4 @@
 import {makeAutoObservable} from 'mobx';
-import {redirect} from "react-router-dom";
 
 class RootStore {
     currentScreen = 'wait';
@@ -9,7 +8,6 @@ class RootStore {
     }
 
     setCurrentScreen(value: string){
-        redirect('/'+value);
         console.log(value);
         this.currentScreen = value;
     }

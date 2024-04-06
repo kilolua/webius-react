@@ -1,48 +1,32 @@
-import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
 import {Idle} from "@/3-pages/idlePage";
 import {Pin} from "@/3-pages/pinPage";
+import {useStores} from "@/1-app/store/useStores.ts";
+import MainMenuPage from "@/3-pages/MainMenuPage.tsx";
+import {observer} from "mobx-react-lite";
 import {useEffect} from "react";
 
 const Main = () => {
+    const {store} = useStores();
+    useEffect(() => {
+        console.log('store refresh')
+    }, [store.currentScreen]);
+
+    function renderScreen(){
+        switch (store.currentScreen) {
+            case 'idle':
+                return <Idle/>
+            case 'pin':
+                return <Pin/>
+            case 'main_menu':
+                return <MainMenuPage/>
+            case 'balance_ok':
+                console.log('balance_res_ok');
+        }
+    }
+
     return (
-        <div>
-            <BrowserRouter>
-                <Routes>
-                    <Route path={'/'} element={<Init/>}></Route>
-                    <Route path={'/idle'} element={<Idle/>}></Route>
-                    <Route path={'/pin'} element={<Pin/>}></Route>
-                </Routes>
-            </BrowserRouter>
-        </div>
+        !!store.currentScreen && renderScreen()
     );
 };
 
-const Init = ()=>{
-    const navigate = useNavigate();
-    function websocet(){
-        const socket = new WebSocket(`ws://localhost:8080/`);
-        socket.onopen = async (event) => {
-            console.log(event);
-
-        };
-        socket.onclose = function (event) {
-            console.log("Соединение закрыто ." + event);
-        };
-        socket.onmessage = (event: MessageEvent<string>) => {
-            console.log(event.data);
-            navigate('/'+event.data);
-            // store.setCurrentScreen(event.data);
-        };
-        socket.onerror = function (error) {
-            console.log("Ошибка " + error);
-        };
-    }
-
-    useEffect(() => {
-        websocet();
-    }, []);
-
-    return <></>
-}
-
-export default Main;
+export default observer(Main);

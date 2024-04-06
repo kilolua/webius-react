@@ -15,16 +15,26 @@ let tmpCurrentState = '';
 
 // Support JSON encoded POST request bodies
 app.use(bodyParser.json());
+app.use('/front', express.static(path.join(__dirname, "build")));
 
-// POST Example
+
+
+app.get('/front/*', (req, res) => {
+    res.sendFile(path.join(__dirname, "build/front", "index.html"));
+});
+app.post("/front", function (req, res) {
+    res.sendFile(path.join(__dirname, "build/front", "index.html"));
+});
+
+
 app.post('/sendUrl', (req, res) => {
     currentState = req.body.url.slice(req.body.url.indexOf('=')+1);
     res.send('POST Hello!');
 });
-
 app.get('/urlSender', (req, res) => {
     res.sendFile(__dirname + '/test.html');
 });
+
 
 app.ws('/', function(ws, req) {
     ws.on('message', function() {
