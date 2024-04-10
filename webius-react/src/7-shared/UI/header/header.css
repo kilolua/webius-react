@@ -1,0 +1,59 @@
+.header{
+    position: absolute;
+    left: 24px;
+    top: 16px;
+    width: 976px;
+}
+
+.phone{
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    flex-direction: row;
+
+    width: 308px;
+}
+
+.time{
+    position: absolute;
+    left: 377px;
+    top: 8px;
+
+    height: 24px;
+    width: 223px;
+}
+
+.atm{
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 215px;
+}
+
+.atmNumber{
+    background: #FFFFFF3D;
+    width: 109px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+}
+
+.paySys{
+    position: absolute;
+    left: 406px;
+    top: -12px;
+
+}

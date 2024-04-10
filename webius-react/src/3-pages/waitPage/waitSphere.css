@@ -1,0 +1,18 @@
+.title{
+    position: absolute;
+    left: 0px;
+    top: 488px;
+
+    width: 100%;
+    text-align: center;
+
+}
+.mainIcon{
+    position: absolute;
+    left: 0px;
+    top: 296px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

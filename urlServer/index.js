@@ -18,13 +18,12 @@ app.use(bodyParser.json());
 app.use('/front', express.static(path.join(__dirname, "build")));
 
 
-
-app.get('/front/*', (req, res) => {
-    res.sendFile(path.join(__dirname, "build/front", "index.html"));
-});
-app.post("/front", function (req, res) {
-    res.sendFile(path.join(__dirname, "build/front", "index.html"));
-});
+// app.get('/front/*', (req, res) => {
+//     res.sendFile(path.join(__dirname, "build/front", "index.html"));
+// });
+// app.post("/front", function (req, res) {
+//     res.sendFile(path.join(__dirname, "build/front", "index.html"));
+// });
 
 
 app.post('/sendUrl', (req, res) => {
@@ -53,3 +52,8 @@ app.ws('/', function(ws, req) {
 server.listen(PORT, () => {
     console.log(`[-] Server Listening on Port ${PORT}`);
 });
+
+
+
+// TODO Проблемы
+// 1)

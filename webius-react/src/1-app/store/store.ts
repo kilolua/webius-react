@@ -1,13 +1,14 @@
 import {makeAutoObservable} from 'mobx';
 
 class RootStore {
-    currentScreen = 'wait';
+    currentScreen = 'pin';
+    atmId =  '198123';
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    setCurrentScreen(value: string){
+    setCurrentScreen(value: string) {
         console.log(value);
         this.currentScreen = value;
     }

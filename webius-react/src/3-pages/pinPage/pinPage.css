@@ -1,0 +1,91 @@
+.backCard.white {
+    top: 668px;
+    left: 24px;
+    right: unset;
+    background: var(--white-btn);
+}
+
+.backBG {
+    background-image: url('../img/BG gradient.png');
+}
+
+.continue{
+    position: absolute;
+    top: 668px;
+    right: 24px;
+
+    display: none;
+    padding: 24px 24px 24px 32px;
+    align-items: center;
+    gap: 16px;
+
+    border-radius: 100px;
+    background: var(--light-button-outlined-brand-text);
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    top: 314px;
+}
+
+.title {
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 535px;*/
+
+    text-align: center;
+    color: #FFFFFF !important;
+
+    width: 100%;
+
+}
+
+.note {
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 694px;*/
+
+    text-align: center;
+
+    width: 100%;
+
+}
+
+.pinContainer {
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 623px;*/
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+
+    gap: 24px;
+}
+
+.pinContainer.error {
+    animation: errPin 0.5s ease forwards;
+}
+
+@keyframes errPin {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-5%);
+    }
+    40% {
+        transform: translateX(5%);
+    }
+    60% {
+        transform: translateX(-2%);
+    }
+    80% {
+        transform: translateX(2%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

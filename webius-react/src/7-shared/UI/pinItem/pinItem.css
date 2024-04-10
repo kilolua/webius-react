@@ -1,0 +1,33 @@
+.pin {
+    transition: all 0.4s ease;
+}
+
+.loadPin .i1{
+    animation: loadPin 2s linear infinite;
+
+}
+.loadPin .i2{
+    animation: loadPin 2s linear infinite;
+    animation-delay: 0.2s;
+}
+.loadPin .i3{
+    animation: loadPin 2s linear infinite;
+    animation-delay: 0.4s;
+}
+.loadPin .i4{
+    animation: loadPin 2s linear infinite;
+    animation-delay: 0.6s;
+}
+
+
+@keyframes loadPin {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
