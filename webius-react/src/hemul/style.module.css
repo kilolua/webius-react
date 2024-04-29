@@ -1,0 +1,11 @@
+.container{
+    position: absolute;
+
+    display: flex;
+    padding: 100px;
+
+    background: rgba(100%, 100%, 100%, 0.3);
+
+    left: calc(50%);
+    top: 50%;
+}

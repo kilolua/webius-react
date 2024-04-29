@@ -1,5 +1,5 @@
 import './pinPage.css';
-import PinItem from "@/7-shared/UI/pinItem/PinItem.tsx";
+import PinItem from "@/UI/pinItem/PinItem.tsx";
 
 const PinPage = () => {
     return (

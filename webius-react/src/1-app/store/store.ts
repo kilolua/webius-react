@@ -1,8 +1,10 @@
 import {makeAutoObservable} from 'mobx';
 
 class RootStore {
-    currentScreen = 'pin';
+    currentScreen = 'wait';
     atmId =  '198123';
+
+    screens = []
 
     constructor() {
         makeAutoObservable(this);

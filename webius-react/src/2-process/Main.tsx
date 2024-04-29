@@ -1,9 +1,9 @@
 import {useStores} from "@/1-app/store/useStores.ts";
 import {observer} from "mobx-react-lite";
 import {useEffect} from "react";
-import Idle from "@/3-pages/idlePage/Idle.tsx";
-import WaitPage from "@/3-pages/waitPage/WaitPage.tsx";
-import PinPage from "@/3-pages/pinPage/PinPage.tsx";
+import Idle from "@/3-modules/idle/idlePage/Idle.tsx";
+import WaitPage from "@/UI/waitPage/WaitPage.tsx";
+import PinPage from "@/3-modules/auth/pinPage/PinPage.tsx";
 
 const Main = () => {
     const {store} = useStores();
