@@ -1,10 +1,42 @@
 import './pinPage.css';
 import PinItem from "@/UI/pinItem/PinItem.tsx";
-import useKeyDown from "@/hooks/useKeyDown.tsx";
+import {useEffect, useState} from "react";
 
 
 const PinPage = () => {
-    useKeyDown();
+    const [pin, setPin] = useState('');
+
+    const pinArray = getPinArray(pin);
+    console.log(pinArray);
+
+    function getPinArray(str: string | string[]){
+        let res = [];
+        for (let i = 0; i < 4; i++){
+            if (str[i] === '*'){
+                res.push(true);
+            }
+            else{
+                res.push(false);
+            }
+        }
+        return res;
+    }
+
+    const keyDown = (event: { code: string; }) => {
+        if (event.code === 'Backspace') {
+            setPin('');
+        }
+        else{
+            setPin(prev => prev + '*');
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('keydown', keyDown)
+        return () => {
+            document.removeEventListener('keydown', keyDown);
+        }
+    }, []);
 
     return (
         <div>
@@ -13,10 +45,9 @@ const PinPage = () => {
                 <div className="note text-White-23-Regular"></div>
 
                 <div className="pinContainer" id="pin-container">
-                    <PinItem/>
-                    <PinItem/>
-                    <PinItem/>
-                    <PinItem/>
+                    {pinArray.map((item, index) => (
+                        <PinItem fill={item} key={index}/>
+                    ))}
                 </div>
             </div>
 

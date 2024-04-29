@@ -1,10 +1,23 @@
 import './pinItem.css';
+import {FC} from "react";
 
-const PinItem = () => {
+interface Props{
+    fill:boolean
+}
+
+const PinItem:FC<Props> = ({fill}) => {
     return (
         <div className="pinItem">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle className="pin" id="pin1" cx="16" cy="16" r="14.5" stroke="white" stroke-width="3"/>
+                <circle
+                    className="pin"
+                    id="pin1"
+                    cx="16"
+                    cy="16"
+                    r="14.5"
+                    stroke="white"
+                    strokeWidth="3"
+                    fill={fill ? 'url(#paint0_radial_1102_1886)' : ''}/>
                 <defs>
                     <radialGradient id="paint0_radial_1102_1886" cx="0" cy="0" r="1"
                                     gradientUnits="userSpaceOnUse"
