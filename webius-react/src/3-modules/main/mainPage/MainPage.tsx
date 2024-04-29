@@ -7,13 +7,14 @@ import './menu.css';
 import {observer} from "mobx-react-lite";
 import {useStores} from "@/1-app/store/useStores.ts";
 import BottomBar from "@/4-widgets/BottomBar/BottomBar.tsx";
+import styled from "styled-components";
 
 const MainPage = () => {
     const {store} = useStores();
     return (
         <div className="main">
             <div id="content">
-                <div className="title text-light-text-primary-34-Medium" id="label-title"></div>
+                <Title className="text-light-text-primary-34-Medium">Здравствуйте, Константин!</Title>
 
                 <div className="buttons">
                     <ButtonOper visible={store.AtmStore.dispenser} title={'Снятие'} image={CashoutIcon} subText={'Мелкими и крупными'}></ButtonOper>
@@ -32,5 +33,14 @@ const MainPage = () => {
         </div>
     );
 };
+
+
+const Title = styled.div`
+    position: absolute;
+    left: 0px;
+    top: 94px;
+    width: 100%;
+    text-align: center;
+`
 
 export default observer(MainPage);
