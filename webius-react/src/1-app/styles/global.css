@@ -71,7 +71,7 @@ img {
 }
 
 .btn {
-    display: none;
+    display: flex;
     transition: transform 0.3s ease;
     transform: scale(1);
 }

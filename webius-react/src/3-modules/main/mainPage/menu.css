@@ -1,0 +1,110 @@
+.title{
+    position: absolute;
+    left: 0px;
+    top: 94px;
+    width: 100%;
+
+    text-align: center;
+}
+
+.buttons{
+    position: absolute;
+    top: 150px;
+    left: 24px;
+
+    width: 976px;
+    height: 258px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+
+    gap: 16px;
+}
+
+.smallButton.disabled{
+    opacity: 0.3;
+}
+
+.bigButton{
+    display: none;
+    border-radius: 16px;
+    border: 1px solid var(--light-brand-24);
+    background: var(--white-btn);
+    width: 1032px;
+    height: 210px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bigButton.disabled{
+    opacity: 0.3;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate2 {
+    0% {
+        transform: rotate(0deg);
+        border-top-color: rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        transform: rotate(180deg);
+        border-top-color: rgba(0, 0, 255, 0.5);
+    }
+    100% {
+        transform: rotate(360deg);
+        border-top-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.anim .loader{
+    display: block;
+}
+.loader {
+    width: 40px;
+    height: 40px;
+    display: none;
+    overflow: hidden;
+}
+.loader div {
+    height: 100%;
+}
+/*loader 3  */
+.loader3, .loader3 div {
+    border-radius: 50%;
+    padding: 1px;
+    border: 2px solid transparent;
+    animation: rotate linear 3.5s infinite;
+    border-top-color: rgba(255, 255, 255, 0.5);
+    border-left-color: rgba(0, 0, 255, 0.5);
+    animation-timing-function: cubic-bezier(0.55, 0.38, 0.21, 0.88);
+    animation-duration: 3s;
+}
+.loader, .loader * {
+    will-change: transform;
+}
+
+
+
+.main {
+    position: absolute;
+    left: 0;
+    top: 72px;
+    width: 1024px;
+    height: 696px;
+
+    border-radius: 32px 32px 0px 0px;
+    background: var(--light-elevation-1-body-click);
+}

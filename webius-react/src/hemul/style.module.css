@@ -2,7 +2,9 @@
     position: absolute;
 
     display: flex;
+    flex-direction: column;
     padding: 100px;
+    gap: 10px;
 
     background: rgba(100%, 100%, 100%, 0.3);
 

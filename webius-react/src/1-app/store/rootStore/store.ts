@@ -1,12 +1,14 @@
 import {makeAutoObservable} from 'mobx';
+import AtmStore from "@/1-app/atmStore/AtmStore.ts";
 
 class RootStore {
     currentScreen = 'wait';
     atmId =  '198123';
 
-    screens = []
+    AtmStore: AtmStore;
 
     constructor() {
+        this.AtmStore = new AtmStore();
         makeAutoObservable(this);
     }
 

@@ -1,21 +1,16 @@
-import {useStores} from "@/1-app/store/useStores.ts";
-import {screens} from "@/constants/screens.ts";
 import styles from './style.module.css';
+import ScreensControl from "@/hemul/componets/screensControl/ScreensControl.tsx";
+import DeviceControl from "@/hemul/componets/diviceControl/DeviceControl.tsx";
+import {observer} from "mobx-react-lite";
 
 const Hemul = () => {
-    const {store} = useStores();
-
-    const setCurrentScreen = (screen: string)=>{
-        store.setCurrentScreen(screen)
-    }
 
     return (
         <div className={styles.container}>
-            {screens.map((item)=>(
-                <button onClick={()=>setCurrentScreen(item)}>{item}</button>
-            ))}
+            <ScreensControl/>
+            <DeviceControl/>
         </div>
     );
 };
 
-export default Hemul;
+export default observer(Hemul);

@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import Idle from "@/3-modules/idle/idlePage/Idle.tsx";
 import WaitPage from "@/UI/waitPage/WaitPage.tsx";
 import PinPage from "@/3-modules/auth/pinPage/PinPage.tsx";
+import MainPage from "@/3-modules/main/mainPage/MainPage.tsx";
 
 const Main = () => {
     const {store} = useStores();
@@ -19,6 +20,8 @@ const Main = () => {
                 return <WaitPage/>
             case 'pin':
                 return <PinPage/>
+            case 'menu':
+                return <MainPage/>
             case 'balance_ok':
                 console.log('balance_res_ok');
                 return <></>
