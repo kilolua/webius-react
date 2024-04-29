@@ -1,12 +1,16 @@
 import './pinPage.css';
 import PinItem from "@/UI/pinItem/PinItem.tsx";
+import useKeyDown from "@/hooks/useKeyDown.tsx";
+
 
 const PinPage = () => {
+    useKeyDown();
+
     return (
         <div>
             <div className="content">
-                <div className="title text-light-text-primary-34-Medium" id="label-title">Введите ПИН</div>
-                <div className="note text-White-23-Regular" id="label-note"></div>
+                <div className="title text-light-text-primary-34-Medium">Введите ПИН</div>
+                <div className="note text-White-23-Regular"></div>
 
                 <div className="pinContainer" id="pin-container">
                     <PinItem/>
