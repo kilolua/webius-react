@@ -8,13 +8,15 @@ import {observer} from "mobx-react-lite";
 import {useStores} from "@/1-app/store/useStores.ts";
 import BottomBar from "@/4-widgets/BottomBar/BottomBar.tsx";
 import styled from "styled-components";
+import Button from "@/UI/button/Button.tsx";
 
 const MainPage = () => {
     const {store} = useStores();
+
     return (
         <div className="main">
             <div id="content">
-                <Title className="text-light-text-primary-34-Medium">Здравствуйте, Константин!</Title>
+                <Title className="text-light-text-primary-34-Medium">title</Title>
 
                 <div className="buttons">
                     <ButtonOper visible={store.AtmStore.dispenser} title={'Снятие'} image={CashoutIcon} subText={'Мелкими и крупными'}></ButtonOper>
@@ -25,19 +27,24 @@ const MainPage = () => {
 
                 <BottomBar/>
 
-                <div className="btn backCard" id="button-exit">
-                    <span className="text-White-23-Regular"></span>
-                    <img src="" alt=""/>
-                </div>
+                <ExitButtonContainer>
+                    <Button icon={''} text={'Завершить'}/>
+                </ExitButtonContainer>
             </div>
         </div>
     );
 };
 
+const ExitButtonContainer = styled.div`
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+`
+
 
 const Title = styled.div`
     position: absolute;
-    left: 0px;
+    left: 0;
     top: 94px;
     width: 100%;
     text-align: center;
