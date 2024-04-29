@@ -1,13 +1,13 @@
 import './pinPage.css';
 import PinItem from "@/UI/pinItem/PinItem.tsx";
 import {useEffect, useState} from "react";
+import Button from "@/UI/button/Button.tsx";
+import styled from "styled-components";
 
 
 const PinPage = () => {
     const [pin, setPin] = useState('');
-
     const pinArray = getPinArray(pin);
-    console.log(pinArray);
 
     function getPinArray(str: string | string[]){
         let res = [];
@@ -41,26 +41,35 @@ const PinPage = () => {
     return (
         <div>
             <div className="content">
-                <div className="title text-light-text-primary-34-Medium">Введите ПИН</div>
-                <div className="note text-White-23-Regular"></div>
-
+                <div style={{color: '#FFFFFF'}} className="text-light-text-primary-34-Medium">Введите ПИН</div>
                 <div className="pinContainer" id="pin-container">
                     {pinArray.map((item, index) => (
                         <PinItem fill={item} key={index}/>
                     ))}
                 </div>
+                <div className="text-White-23-Regular"></div>
             </div>
-
-            <div className="btn backCard white" id="button-exit">
-                <span className="text-light-text-primary-23-Regular"></span>
-                <img src="" alt=""/>
-            </div>
-            <div className="btn continue" id="button-continue">
-                <span className="text-White-23-Regular"></span>
-                <img src="" alt=""/>
-            </div>
+            <ExitButtonContainer>
+            <Button text={'Завершить'} icon={''}/>
+            </ExitButtonContainer>
+            <ContinueButtonContainer>
+                <Button text={'Продолжить'} icon={''}/>
+            </ContinueButtonContainer>
         </div>
     );
 };
+
+const ExitButtonContainer = styled.div`
+    position: absolute;
+    top: 668px;
+    left: 24px;
+    right: unset;
+`
+
+const ContinueButtonContainer = styled.div`
+    position: absolute;
+    top: 668px;
+    right: 24px;
+`
 
 export default PinPage;
