@@ -1,4 +1,4 @@
-//ts-ignore
+// @ts-nocheck
 
 class WebIUSFramework {
     static getFrameworkVersion() {
@@ -212,7 +212,7 @@ class WebIUSFramework {
 export const WF = new Proxy(WebIUSFramework, {
     get(target, prop){
         if (import.meta.env.DEV) {
-            console.log('Обращение к методу: ', target[prop].name);
+            console.log('Обращение к методу браузера: ', target[prop].name);
             return()=>undefined;
         }
         return target[prop];
