@@ -5,8 +5,8 @@ import styled from "styled-components";
 interface Props {
     title: string,
     subText: string,
-    image:string,
-    visible:boolean,
+    image: string,
+    visible: boolean | undefined,
 }
 
 const ButtonOper: FC<Props> = ({title, subText, image, visible}) => {
@@ -24,8 +24,8 @@ const ButtonOper: FC<Props> = ({title, subText, image, visible}) => {
 };
 
 
-const ButtonContainer = styled.button<{visible?:boolean}>`
-    display: ${props=>props.visible ? 'flex' : 'none'};
+const ButtonContainer = styled.button<{ visible?: boolean }>`
+    display: ${props => props.visible ? 'flex' : 'none'};
     border-radius: 16px;
     border: 1px solid var(--light-brand-24);
     background: var(--white-btn);

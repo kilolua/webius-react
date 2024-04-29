@@ -1,9 +1,16 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 import {observer} from "mobx-react-lite";
 import './idle.css'
 import InsertCardAnim from './assets/insertCard_idle.webm';
+import {useStores} from "@/1-app/store/useStores.ts";
 
 const Idle: FC = () => {
+
+    const {store} = useStores();
+
+    useEffect(() => {
+        store.AtmStore.refreshAtmStatus();
+    }, []);
 
     return (
         <>
